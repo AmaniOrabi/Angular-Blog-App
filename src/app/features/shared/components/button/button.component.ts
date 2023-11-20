@@ -10,7 +10,7 @@ export class ButtonComponent {
   @Input() ctaText: string = '';
   @Input() ctaColor: string = 'primary';
   @Input() ctaIcon: string = '';
-  @Input() ctaCLass: string = '';
+  @Input() ctaClass: string = '';
   @Input() ctaIconColor: string = '';
 
   @Output() onButtonCLicked = new EventEmitter<void>();

@@ -22,3 +22,10 @@
   color: white;
 }
 
+.medium {
+  @apply text-lg;
+}
+.big {
+  @apply text-2xl;
+  padding: 30px;
+}

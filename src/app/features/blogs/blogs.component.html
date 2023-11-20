@@ -1,6 +1,19 @@
 <div class="p-5 flex flex-col justify-center">
-  <div class="flex justify-center text-lg my-6">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+  <div class="flex-center flex-col my-6">
+    <div class="font-semibold text-6xl text-primaryGray mb-6">
+      Publish your passions, your way.
+    </div>
+    <div class="text-xl font-medium mb-10">
+      Create a unique and beautiful blog. It's easy and free.
+    </div>
+    <div class="flex-center py-4 px-8 mb-10 text-3xl cursor-pointer">
+      <app-button
+        (onButtonCLicked)="openCreateBlogDialog()"
+        ctaIcon="add_icon"
+        ctaText="Create a Blog"
+        ctaClass="accent big"
+      ></app-button>
+    </div>
   </div>
 
   <div class="flex flex-row w-full flex-wrap justify-around">

@@ -1,0 +1,43 @@
+<div class="w-[60vw] p-6">
+  <div class="text-black font-bold text-5xl flex-center m-6">
+    Create your own blog now..
+  </div>
+  <div
+    class="flex flex-col w-full justify-center items-center my-4"
+    [formGroup]="form"
+  >
+    <mat-form-field appearance="outline" class="bg-white w-[50%]">
+      <input
+        matInput
+        placeholder="Type your blog title"
+        formControlName="username"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-[80%] h-[60vh] max-h-[60vh]">
+      <textarea
+        matInput
+        placeholder="Type your blog content..."
+        type="password"
+        formControlName="password"
+        class="min-h-[55vh]"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-[80%]">
+      <input
+        matInput
+        placeholder="Type your image url"
+        type="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <div class="w-full flex justify-end">
+      <app-button
+        ctaText="Submit"
+        ctaClass="medium accent"
+        ctaIcon="arrow_right_alt"
+        (onButtonCLicked)="createBlogCLicked()"
+      ></app-button>
+    </div>
+  </div>
+</div>
