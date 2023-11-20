@@ -4,7 +4,7 @@
 @import "tailwindcss/utilities";
 
 :root {
-  color-scheme: dark light;
+  color-scheme: light;
 }
 
 * {
@@ -77,29 +77,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-/* Set primary and accent colors */
-$primary-color: #85c042;
-$accent-color: #f9a800;
-
-/* Create a custom theme */
-$custom-theme: (
-  primary: (
-    default: $primary-color,
-    hue-1: lighten($primary-color, 10%),
-    hue-2: lighten($primary-color, 20%),
-    hue-3: lighten($primary-color, 30%),
-  ),
-  accent: (
-    default: $accent-color,
-  ),
-);
-
-/* Create a theme using the custom colors */
-// $theme: mat-light-theme($custom-theme);
-
-/* Include the theme in your application */
-// @include angular-material-theme($theme);
-
 .scrollbar::-webkit-scrollbar {
   width: 10px;
 }
@@ -118,14 +95,11 @@ $custom-theme: (
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: $accent-color; /* Use accent color for the scrollbar thumb */
+  background-color: #49a2e242;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: lighten(
-    $accent-color,
-    10%
-  ); /* Lighten accent color on hover */
+  background-color: #49a2e262;
   cursor: pointer;
 }
 
