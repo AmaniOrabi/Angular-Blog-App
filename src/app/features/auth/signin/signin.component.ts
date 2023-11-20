@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { Component, EventEmitter, Output } from '@angular/core';
+
 import {
-  FormControl,
+  FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -10,25 +9,26 @@ import {
 
 @Component({
   selector: 'app-signin',
-  standalone: true,
-  imports: [CommonModule, MatFormFieldModule, ReactiveFormsModule],
+  standalone: false,
+
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss',
 })
 export class SigninComponent {
-  signinForm!: FormGroup<any>;
-  email = new FormControl('', [Validators.required, Validators.email]);
-  hide!: boolean;
-  onSignInClick() {
-    throw new Error('Method not implemented.');
+  @Output() onReturnCLicked = new EventEmitter<void>();
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
-  isSignUpmoveLeftEnabled: any;
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  signIn() {
+    console.log(this.form.value);
+  }
+  returnClicked() {
+    this.onReturnCLicked.emit()
   }
 }

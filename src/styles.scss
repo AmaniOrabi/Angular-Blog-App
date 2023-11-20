@@ -3,6 +3,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
 :root {
   color-scheme: light;
 }
@@ -108,4 +109,13 @@ body {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border-radius: 12px !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

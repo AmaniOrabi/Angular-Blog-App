@@ -1,0 +1,24 @@
+.btn-base {
+  // border: none !important;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.primary {
+  @apply bg-primaryColor;
+  color: white;
+}
+
+.accent {
+  @apply bg-accentColor;
+}
+
+.gray {
+  @apply bg-primaryGray;
+}
+
+.dark {
+  @apply bg-black;
+  color: white;
+}
+

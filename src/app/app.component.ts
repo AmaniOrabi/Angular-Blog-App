@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './features/shared/components/header/header.component';
 
 @Component({
@@ -10,6 +10,10 @@ import { HeaderComponent } from './features/shared/components/header/header.comp
   styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, HeaderComponent],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'neoblog-app';
+
+  ngOnInit(): void {
+
+  }
 }

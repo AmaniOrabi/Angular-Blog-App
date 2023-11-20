@@ -1,0 +1,14 @@
+<button
+  mat-stroked-button
+  class="{{ ctaCLass }} btn-base cursor-pointer my-2"
+  (click)="buttonCLicked()"
+>
+  <mat-icon
+    aria-hidden="false"
+    [style.color]="ctaIconColor"
+    fontIcon="{{ ctaIcon }}"
+  ></mat-icon>
+
+
+  {{ ctaText }}
+</button>

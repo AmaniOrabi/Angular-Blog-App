@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthModule } from '../auth/auth.module';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSlideToggleModule,
     MatDividerModule,
     MatIconModule,
+    AuthModule,
+    SharedModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -24,9 +28,15 @@ export class HomeComponent {
 
   onSignUpCLick() {
     this.isSignUpmoveLeftEnabled = true;
+    this.isSignInmoveLeftEnabled = false;
   }
 
   onSignInCLick() {
     this.isSignInmoveLeftEnabled = true;
+  }
+  onReturnCLick() {
+    this.isSignUpmoveLeftEnabled = false;
+    this.isSignInmoveLeftEnabled = false;
+    
   }
 }

@@ -1,4 +1,4 @@
-<div class="flex flex-row min-w-[100vw]">
+<div class="flex flex-row min-w-[100vw] ">
   <div class="bg-accentColor min-w-[80vw] h-[100vh] info-container">
     <!-- main page -->
     <div class="flex flex-col gap-14 w-2/3 m-auto mt-32">
@@ -8,52 +8,28 @@
         and experts from around the globe. Discover stories, thinking and
         expertise from writers on any topic.
       </p>
-      <div
-        class="w-fit flex-center rounded-full py-2 px-6 mt-20 bg-black cursor-pointer"
-        (click)="onSignUpCLick()"
-      >
-        <button mat-raised-button class="blackbtn">Sign in now</button>
-        <mat-icon aria-hidden="false" fontIcon="arrow_right_alt"></mat-icon>
-      </div>
+
+      <app-button
+        ctaText="Sign up now"
+        ctaCLass="text-lg dark"
+        ctaIcon="arrow_right_alt"
+        (onButtonCLicked)="onSignUpCLick()"
+      ></app-button>
     </div>
   </div>
   <!-- sign up -->
   <div
-    class="bg-white min-w-[60vw] h-[100vh] action-container signup-container p-12"
+    class="bg-white min-w-[60vw] h-[100vh] action-container signup-container p-12 flex flex-col"
     [ngClass]="{ 'move-left': isSignUpmoveLeftEnabled }"
   >
-    <div class="flex justify-around items-center">
-      <div class="w-1/2">
-        <span class="text-black font-bold text-7xl"
-          >Come for what you love, Stay for what you discover.</span
-        >
-        <p class="text-black font-normal text-lg pt-8">
-          Talk about what you're passionate about, your way.
-        </p>
-      </div>
-      <img
-        src="https://neovee.fr/wp-content/uploads/2020/04/Objet-dynamique-vectoriel_3-okeip6ag0wqh6k2ypee6dg_2c355de8d3d76125cef94fbdd1b7a45e.png"
-        alt="Image description"
-      />
-    </div>
-    <!-- sign in -->
-    <div
-      class="w-fit flex-center rounded-full py-2 px-6 mt-20 bg-fadedGrey cursor-pointer"
-      (click)="onSignUpCLick()"
-    >
-      <button mat-raised-button class="greybtn" (click)="onSignInCLick()">
-        Already have an account ?
-      </button>
-      <mat-icon
-        aria-hidden="false"
-        style="color: black"
-        fontIcon="arrow_right_alt"
-      ></mat-icon>
-    </div>
+    <app-signup (onSignInCLick)="onSignInCLick()"></app-signup>
   </div>
+  <!-- sign in -->
 
   <div
-    class="bg-fadedGrey min-w-[60vw] h-[100vh] action-container signin-container"
+    class="bg-white min-w-[60vw] h-[100vh] action-container signin-container p-12 flex flex-col"
     [ngClass]="{ 'move-left': isSignInmoveLeftEnabled }"
-  ></div>
+  >
+    <app-signin (onReturnCLicked)="onReturnCLick()"></app-signin>
+  </div>
 </div>

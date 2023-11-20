@@ -1,1 +1,61 @@
-<p>signup works!</p>
+<div class="flex justify-between items-center mx-10">
+  <div class="w-1/2">
+    <span class="text-black font-bold text-7xl"
+      >Come for what you love, Stay for what you discover.</span
+    >
+    <p class="text-black font-normal text-md pt-8">
+      Talk about what you're passionate about, your way.
+    </p>
+  </div>
+  <img
+    src="https://neovee.fr/wp-content/uploads/2020/04/Objet-dynamique-vectoriel_3-okeip6ag0wqh6k2ypee6dg_2c355de8d3d76125cef94fbdd1b7a45e.png"
+    alt="Image description"
+    class=""
+  />
+</div>
+
+<div class="w-full flex justify-start mx-10">
+  <div class=" flex flex-col w-[50%]" [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Type your Username..."
+        formControlName="username"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        placeholder="Type your Email..."
+        formControlName="email"
+        type="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="">
+      <input
+        matInput
+        placeholder="Type your password..."
+        type="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+
+    <app-button
+      ctaText="Sign Up"
+      ctaColor="primary"
+      ctaIcon="arrow_right_alt"
+      (onButtonCLicked)="signUp()"
+    ></app-button>
+  </div>
+</div>
+
+<div class="w-full flex justify-end">
+  <app-button
+    ctaText="Already have an account ?"
+    ctaCLass="primary "
+    ctaIcon="arrow_right_alt"
+    (onButtonCLicked)="signInCLick()"
+  ></app-button>
+</div>
