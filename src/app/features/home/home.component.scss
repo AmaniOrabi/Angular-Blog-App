@@ -1,0 +1,17 @@
+.info-container {
+  transition: 1s all;
+}
+
+.action-container {
+  transition: 1s all;
+}
+.signup-container.move-left {
+  transform: translatex(-40vw);
+}
+
+.signin-container.move-left {
+  transform: translatex(-100vw);
+}
+.move-right {
+  transform: translatex(40vw);
+}

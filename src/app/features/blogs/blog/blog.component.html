@@ -1,0 +1,9 @@
+<div (mouseenter)="onBlogHover=true" (mouseleave)="onBlogHover=false" class=" blog-container overflow-hidden relative rounded-xl bg-gray-400 min-w-[25%] h-[25vh] m-6 p-6">
+{{title}}
+{{description}}
+
+<div class="blog-info absolute bottom-0 w-full bg-gray-300 right-0 h-[20%]" [ngClass]="{'show':onBlogHover}">
+    Liked by {{likedByNumber}} people
+</div>
+
+</div>

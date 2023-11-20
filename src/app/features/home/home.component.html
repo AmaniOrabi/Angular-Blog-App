@@ -1,0 +1,23 @@
+<div class="flex flex-row min-w-[100vw]">
+  <div class="bg-yellow-400 min-w-[80vw] h-[100vh] info-container">
+    <!-- main page -->
+    <button mat-raised-button color="primary" (click)="onSignUpCLick()">
+      Sign up
+    </button>
+  </div>
+  <div
+    class="bg-green-400 min-w-[60vw] h-[100vh] action-container signup-container"
+    [ngClass]="{ 'move-left': isSignUpmoveLeftEnabled }"
+  >
+    <!-- sign up -->
+    <button mat-raised-button color="primary" (click)="onSignInCLick()">
+      Sign in
+    </button>
+  </div>
+  <div
+    class="bg-pink-600 min-w-[60vw] h-[100vh] action-container signin-container"
+    [ngClass]="{ 'move-left': isSignInmoveLeftEnabled }"
+  >
+    <!-- sign in -->
+  </div>
+</div>

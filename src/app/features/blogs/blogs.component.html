@@ -1,0 +1,11 @@
+<div class="p-5 flex flex-col justify-center">
+  <div class="flex justify-center text-lg my-6">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
+  </div>
+
+  <div class="flex flex-row w-full flex-wrap justify-around">
+    <div *ngFor="let blog of blogsList" class="w-[25%] min-w-[200px]">
+      <app-blog></app-blog>
+    </div>
+  </div>
+</div>
