@@ -8,9 +8,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from '../../core/services/auth.service';
+import { SnackbarService } from '../../core/services/snackbar.service';
 
 @NgModule({
   declarations: [SigninComponent, SignupComponent],
+  providers: [AuthService, SnackbarService],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -18,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     MatSelectModule,
     ReactiveFormsModule,
     MatIconModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
   ],
   exports: [SigninComponent, SignupComponent],
 })

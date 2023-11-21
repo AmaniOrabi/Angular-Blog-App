@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import {
   FormBuilder,
@@ -6,6 +7,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { AuthService } from '../../../core/services/auth.service';
+import { SnackbarService } from '../../../core/services/snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -17,18 +21,35 @@ import {
 export class SigninComponent {
   @Output() onReturnCLicked = new EventEmitter<void>();
   form: FormGroup;
-
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
+  private _fb = inject(FormBuilder);
+  private _authService = inject(AuthService);
+  private _snackBarService = inject(SnackbarService);
+  private _router = inject(Router);
+  constructor() {
+    this.form = this._fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
   signIn() {
-    console.log(this.form.value);
+    const payload = {
+      username: this.form.controls['username'].value,
+      password: this.form.controls['password'].value,
+    };
+    this._authService.signin(payload).subscribe(
+      (response: any) => {
+        this._authService.userToken$.next(response.data);
+        this._snackBarService.successSnackbar(response.message);
+        this._router.navigate(['/blogs']);
+      },
+      (response) => {
+        this._snackBarService.failureSNackbar(response?.error?.message);
+      }
+    );
   }
+
   returnClicked() {
-    this.onReturnCLicked.emit()
+    this.onReturnCLicked.emit();
   }
 }

@@ -4,3 +4,9 @@ export interface Blog {
   content?: string;
   likedBy?: number;
 }
+
+export interface createBlog {
+  title?: string;
+  content?: string;
+  cover?: string;
+}

@@ -11,7 +11,7 @@
 
       <app-button
         ctaText="Sign up now"
-        ctaCLass="text-lg dark"
+        ctaClass="text-lg dark"
         ctaIcon="arrow_right_alt"
         (onButtonCLicked)="onSignUpCLick()"
       ></app-button>
@@ -27,7 +27,7 @@
   <!-- sign in -->
 
   <div
-    class="bg-white min-w-[60vw] h-[100vh] action-container signin-container p-12 flex flex-col"
+    class="bg-fadedGrey min-w-[60vw] h-[100vh] action-container signin-container p-12 flex flex-col"
     [ngClass]="{ 'move-left': isSignInmoveLeftEnabled }"
   >
     <app-signin (onReturnCLicked)="onReturnCLick()"></app-signin>
