@@ -3,6 +3,6 @@ export enum ApiRoutes {
   getbBlogById = '/blogs/:id',
   likeBlog = '/blogs/:id/like',
   authSignup = '/auth/signup',
-  authSignin = '/auth/signing',
+  authSignin = '/auth/signin',
   authChangePassword = '/auth/change-password',
 }

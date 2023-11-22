@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './features/shared/components/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'neoblog-app';
-
+  http = inject(HttpClient);
   ngOnInit(): void {}
 }

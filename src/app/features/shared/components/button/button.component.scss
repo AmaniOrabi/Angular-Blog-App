@@ -22,6 +22,11 @@
   color: white;
 }
 
+.light {
+  @apply bg-white;
+  color: black;
+}
+
 .medium {
   @apply text-lg;
 }

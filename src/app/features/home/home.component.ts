@@ -28,9 +28,10 @@ export class HomeComponent {
   isSignInmoveLeftEnabled: boolean = false;
   isSignUpmoveLeftEnabled: boolean = false;
 
-  onSignUpCLick() {
+  onSignUpCLick(event: Event) {
     this.isSignUpmoveLeftEnabled = true;
     this.isSignInmoveLeftEnabled = false;
+    event.stopPropagation();
   }
 
   onSignInCLick() {

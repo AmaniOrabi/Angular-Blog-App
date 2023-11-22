@@ -1,7 +1,13 @@
-<div class="flex flex-row min-w-[100vw] ">
-  <div class="bg-accentColor min-w-[80vw] h-[100vh] info-container">
+<div class="flex flex-row min-w-[100vw]">
+  <div
+    class="bg-accentColor min-w-[80vw] h-[100vh] info-container"
+    (click)="onReturnCLick()"
+  >
     <!-- main page -->
-    <div class="flex flex-col gap-14 w-2/3 m-auto mt-32">
+    <div
+      class="flex flex-col gap-14 w-2/3 m-auto mt-32"
+      [ngClass]="{ 'move-content-left  ': isSignUpmoveLeftEnabled }"
+    >
       <span class="text-black font-extrabold text-9xl"> Stay Curious. </span>
       <p class="text-black font-normal text-3xl">
         Read and share ideas from independent voices, world-class publications
@@ -13,7 +19,7 @@
         ctaText="Sign up now"
         ctaClass="text-lg dark"
         ctaIcon="arrow_right_alt"
-        (onButtonCLicked)="onSignUpCLick()"
+        (click)="onSignUpCLick($event)"
       ></app-button>
     </div>
   </div>

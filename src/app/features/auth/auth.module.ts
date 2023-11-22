@@ -8,13 +8,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../../core/services/auth.service';
 import { SnackbarService } from '../../core/services/snackbar.service';
+// import { AuthInterceptor } from '../../core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [SigninComponent, SignupComponent],
-  providers: [AuthService, SnackbarService],
+  providers: [
+    AuthService,
+    SnackbarService,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true,
+    // },
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,

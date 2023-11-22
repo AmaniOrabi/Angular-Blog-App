@@ -27,8 +27,8 @@ export class SigninComponent {
   private _router = inject(Router);
   constructor() {
     this.form = this._fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -40,11 +40,13 @@ export class SigninComponent {
     this._authService.signin(payload).subscribe(
       (response: any) => {
         this._authService.userToken$.next(response.data);
-        this._snackBarService.successSnackbar(response.message);
+        localStorage.setItem('access-token', response.data.access_token);
+        // this._snackBarService.successSnackbar(response.message);
         this._router.navigate(['/blogs']);
       },
       (response) => {
         this._snackBarService.failureSNackbar(response?.error?.message);
+        // this._snackBarService.successSnackbar('Welcome back !');
       }
     );
   }

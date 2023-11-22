@@ -8,6 +8,10 @@
 .signup-container.move-left {
   transform: translatex(-40vw);
 }
+.move-content-left {
+  transition: 2s;
+  width: 95%;
+}
 
 .signin-container.move-left {
   transform: translatex(-100vw);
@@ -15,12 +19,12 @@
 .move-right {
   transform: translatex(40vw);
 }
+
 .blackbtn {
   color: white;
   font-weight: 700;
   font-size: xx-large;
 }
-
 
 .mat-icon {
   color: white;
