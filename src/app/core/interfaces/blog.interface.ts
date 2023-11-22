@@ -1,12 +1,13 @@
 export interface Blog {
-  title?: string;
-  description?: string;
-  content?: string;
-  likedBy?: number;
+  id: string;
+  title: string;
+  content: string;
+  cover: string;
+  likedBy: number;
 }
 
 export interface createBlog {
-  title?: string;
-  content?: string;
+  title: string;
+  content: string;
   cover?: string;
 }

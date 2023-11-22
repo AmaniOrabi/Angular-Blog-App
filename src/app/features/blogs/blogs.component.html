@@ -18,7 +18,12 @@
 
   <div class="flex flex-row w-full flex-wrap justify-around">
     <div *ngFor="let blog of blogsList" class="w-[25%] min-w-[200px]">
-      <app-blog (click)="openCreateBlogDialog()"></app-blog>
+      <app-blog
+        [title]="blog.title"
+        [cover]="blog.cover"
+        [likedByNumber]="blog.likedBy"
+        (click)="redirectToBlogDetails(blog.id)"
+      ></app-blog>
     </div>
   </div>
 </div>

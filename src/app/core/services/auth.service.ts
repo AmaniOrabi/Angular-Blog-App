@@ -4,13 +4,14 @@ import { SignInPayload } from '../interfaces/signin.interface';
 import { environment } from '../../../environment';
 import { ApiRoutes } from '../constants/api-routes';
 import { SignUpPayload } from '../interfaces/signup.interface';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userToken$ = new BehaviorSubject<string>("");
+  userName$ = new Subject<any>();
+
   private _http = inject(HttpClient);
   constructor() {}
   signin(payload: SignInPayload) {

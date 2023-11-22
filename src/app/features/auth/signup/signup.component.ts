@@ -33,8 +33,10 @@ export class SignupComponent {
     };
     this._authService.signup(payload).subscribe(
       (response: any) => {
-        this._authService.userToken$.next(response.data);
+        this._authService.userName$.next(payload.username);
         this._snackBarService.successSnackbar('Account created successfully');
+        localStorage.setItem('access-token', response.data.access_token);
+
         this._router.navigate(['/blogs']);
       },
       (response) => {

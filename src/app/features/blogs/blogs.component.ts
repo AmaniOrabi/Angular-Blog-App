@@ -10,6 +10,7 @@ import { BlogService } from '../../core/services/blog.service';
 import { AuthService } from '../../core/services/auth.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from '../../core/interceptors/auth.interceptor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs',
@@ -36,9 +37,9 @@ import { AuthInterceptor } from '../../core/interceptors/auth.interceptor';
 export class BlogsComponent implements OnInit {
   private _dialog = inject(MatDialog);
   private _blogService = inject(BlogService);
-  private _authService = inject(AuthService);
 
   blogsList: Blog[] = [];
+  private _router = inject(Router);
 
   ngOnInit(): void {
     const token = localStorage.getItem('access-token');
@@ -46,17 +47,21 @@ export class BlogsComponent implements OnInit {
       this.getAllBlogs();
     }
   }
+
   getAllBlogs() {
     this._blogService.getBlogs().subscribe(
       (response: any) => {
         this.blogsList = response?.data?.blogs;
-        
         console.log(response.data);
       },
       (error) => {
         console.error('Error fetching blogs:', error);
       }
     );
+  }
+
+  redirectToBlogDetails(blogId: string) {
+    this._router.navigate(['/blog-details', blogId]);
   }
 
   openCreateBlogDialog(): void {

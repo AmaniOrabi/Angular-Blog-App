@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { BlogService } from '../../../core/services/blog.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-blog',
@@ -13,9 +13,23 @@ import { BlogService } from '../../../core/services/blog.service';
   styleUrl: './blog.component.scss',
 })
 export class BlogComponent {
-  @Input() title: string = 'Blog title Blog title Blog title';
-  @Input() description: string = 'Blog description';
-  @Input() likedByNumber: number = 0;
+  @Input() title: string = '';
+  @Input() likedByNumber: number = 10;
+  @Input() cover: string = '';
+
+  private _authService = inject(AuthService);
   onBlogHover: boolean = false;
   isHovered: boolean = false;
+  username: string = '';
+
+  ngOnInit(): void {
+    this._authService.userName$.subscribe((username) => {
+      this.username = this.getInitials(username);
+    });
+  }
+
+  private getInitials(name: string): string {
+    const names = name.split(' ');
+    return names.map((n) => n[0]).join('');
+  }
 }

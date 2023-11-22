@@ -2,10 +2,12 @@
   <div
     (mouseenter)="onBlogHover = true"
     (mouseleave)="onBlogHover = false"
-    class="blog-container overflow-hidden relative rounded-xl bg-gray-400 min-w-1/4 h-[25vh] p-6"
+    class="overflow-hidden relative rounded-xl min-w-1/4 h-[25vh] p-6 cursor-pointer"
+    [style.backgroundImage]="'url(' + (cover || '') + ')'"
+    style="background-size: cover; background-position: center"
   >
     <div
-      class="blog-info absolute bottom-0 w-full right-0 h-1/5 flex justify-between items-center m-2 px-3"
+      class="blog-info absolute bottom-0 font-medium text-lg w-full right-0 h-1/5 flex justify-between items-center m-2 px-3"
       [ngClass]="{ show: onBlogHover }"
     >
       <div class="p-3">
@@ -25,11 +27,11 @@
   </div>
   <div class="flex flex-row justify-between py-3 px-2">
     <div class="rounded-full w-fit bg-primaryColor">
-      <p class="p-3" style="margin: 0">NB</p>
+      <p class="p-3" style="margin: 0">{{ username }}</p>
     </div>
     <div class="flex items-center">
       <mat-icon class="mr-1 scale-90">favorite</mat-icon>
-      117
+      {{ likedByNumber }}
     </div>
   </div>
 </div>

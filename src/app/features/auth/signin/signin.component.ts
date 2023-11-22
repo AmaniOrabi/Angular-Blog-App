@@ -39,14 +39,13 @@ export class SigninComponent {
     };
     this._authService.signin(payload).subscribe(
       (response: any) => {
-        this._authService.userToken$.next(response.data);
+        this._snackBarService.successSnackbar('Welcome back !');
         localStorage.setItem('access-token', response.data.access_token);
-        // this._snackBarService.successSnackbar(response.message);
+        this._authService.userName$.next(payload.username);
         this._router.navigate(['/blogs']);
       },
       (response) => {
         this._snackBarService.failureSNackbar(response?.error?.message);
-        // this._snackBarService.successSnackbar('Welcome back !');
       }
     );
   }
