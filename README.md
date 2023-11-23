@@ -1,27 +1,67 @@
-# NeoblogApp
+<h1 align="center">
+  NeoBlog
+</h1>
+<p align="center" style="font-size: 15px;">A web application that allows users to create, like, modify and consult blogs</p>
+<br/><br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+![image](https://github.com/AmaniOrabi/Angular-Blog-App/assets/70351673/e2129b51-fa36-4bee-91a1-e8bb4c653451)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<hr/>
 
-## Code scaffolding
+### 💻 Technologies Used:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br/>
 
-## Build
+This application is written using :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<p align="center">
+  <img src="aio/src/assets/images/logos/angular/angular_renaissance.png" alt="angular-logo" width="120px" height="120px"/>
+  <br>
+  <em>Angular is a development platform for building mobile and desktop web applications
+    <br> using TypeScript/JavaScript and other languages.</em>
+  <br>
+</p>
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<hr/>
 
-## Running end-to-end tests
+### 👨‍💻 Installation and Setup Instructions :
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<br/>
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Development Setup
+
+### Prerequisites
+
+- Install [Node.js] which includes [Node Package Manager][npm]
+
+### Setting Up a Project
+
+Install the Angular CLI globally:
+
+```
+npm install -g @angular/cli
+```
+
+Create workspace:
+
+```
+ng new [PROJECT NAME]
+```
+
+Run the application:
+
+```
+cd [PROJECT NAME]
+ng serve
+```
+
+
+### ✨ Feedback:
+
+<br/>
+
+
+Engaging in this project proved to be a delightful endeavor. I had the opportunity to shape my own design and incorporate various animations, all while ensuring the interface remains responsive, modern, and user-friendly.
