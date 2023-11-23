@@ -1,8 +1,10 @@
 .mat-toolbar {
   background-color: transparent;
-  padding-bottom: 100px;
-  padding-top: 50px;
+  padding: 10px 30px;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .spacer {

@@ -1,1 +1,16 @@
-<p>profile works!</p>
+<div class="p-5 flex flex-col justify-center">
+  <div class="flex-center font-semibold text-6xl text-primaryGray mb-12">
+    Check your blogs ...
+  </div>
+
+  <div class="flex flex-row w-full flex-wrap justify-around">
+    <div *ngFor="let blog of blogsList" class="w-[25%] min-w-[200px]">
+      <app-blog
+        [title]="blog.title"
+        [cover]="blog.cover"
+        [likeCount]="blog.likeCount"
+        [myBlogs]="true"
+      ></app-blog>
+    </div>
+  </div>
+</div>

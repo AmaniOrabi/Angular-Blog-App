@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   @Output() onSignInCLick = new EventEmitter<void>();
+
   form: FormGroup;
   private _authService = inject(AuthService);
   private _snackBarService = inject(SnackbarService);
@@ -33,11 +34,9 @@ export class SignupComponent {
     };
     this._authService.signup(payload).subscribe(
       (response: any) => {
-        this._authService.userName$.next(payload.username);
         this._snackBarService.successSnackbar('Account created successfully');
-        localStorage.setItem('access-token', response.data.access_token);
-
-        this._router.navigate(['/blogs']);
+        sessionStorage.setItem('access-token', response.data.access_token);
+        this.onSignInCLick.emit();
       },
       (response) => {
         this._snackBarService.failureSNackbar(response?.error?.message);

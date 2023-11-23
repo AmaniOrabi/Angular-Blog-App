@@ -28,7 +28,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'blog-details/:blogId',
+    path: 'blog-details/:id',
     component: BlogDetailsComponent,
     pathMatch: 'full',
   },

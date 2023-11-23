@@ -40,8 +40,8 @@ export class SigninComponent {
     this._authService.signin(payload).subscribe(
       (response: any) => {
         this._snackBarService.successSnackbar('Welcome back !');
-        localStorage.setItem('access-token', response.data.access_token);
-        this._authService.userName$.next(payload.username);
+        this._authService.updateUsername(payload.username)
+        sessionStorage.setItem('access-token', response.data.access_token);
         this._router.navigate(['/blogs']);
       },
       (response) => {

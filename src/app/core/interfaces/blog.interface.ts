@@ -3,7 +3,10 @@ export interface Blog {
   title: string;
   content: string;
   cover: string;
-  likedBy: number;
+  likedByUser: boolean;
+  likeCount: number;
+  authorId: string;
+  createdAt?: string;
 }
 
 export interface createBlog {

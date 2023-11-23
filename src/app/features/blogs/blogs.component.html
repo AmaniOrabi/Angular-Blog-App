@@ -3,6 +3,11 @@
     <div class="font-semibold text-6xl text-primaryGray mb-6">
       Publish your passions, your way.
     </div>
+    <div
+      class="rounded-full flex items-center justify-center p-2 w-8 h-8 bg-primaryColor ml-6"
+    >
+      <p class="p-3" style="margin: 0">{{ getInitials(username) }}</p>
+    </div>
     <div class="text-xl font-medium mb-10">
       Create a unique and beautiful blog. It's easy and free.
     </div>
@@ -15,14 +20,15 @@
       ></app-button>
     </div>
   </div>
-
   <div class="flex flex-row w-full flex-wrap justify-around">
     <div *ngFor="let blog of blogsList" class="w-[25%] min-w-[200px]">
       <app-blog
         [title]="blog.title"
+        [id]="blog.id"
         [cover]="blog.cover"
-        [likedByNumber]="blog.likedBy"
-        (click)="redirectToBlogDetails(blog.id)"
+        [likeCount]="blog.likeCount"
+        [myBlogs]="false"
+        [authorId]="blog.authorId"
       ></app-blog>
     </div>
   </div>
