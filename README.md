@@ -15,20 +15,15 @@
 
 This application is written using :
 
-<p align="center">
-  <img src="aio/src/assets/images/logos/angular/angular_renaissance.png" alt="angular-logo" width="120px" height="120px"/>
+<ul>
+    <li> <img alt="ts"  src="https://skillicons.dev/icons?i=ts" width="20" height="20" /> TypeScript</li>
+    <li> <img alt="angular"  src="https://skillicons.dev/icons?i=angular" width="20" height="20" /> Angular </li>
+    <li>  Angular Material</li>
+</ul>  
   <br>
-  <em>Angular is a development platform for building mobile and desktop web applications
-    <br> using TypeScript/JavaScript and other languages.</em>
-  <br>
-</p>
 
 
 <hr/>
-
-### 👨‍💻 Installation and Setup Instructions :
-
-<br/>
 
 
 ## Development Setup
