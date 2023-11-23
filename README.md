@@ -6,7 +6,7 @@
 
 ![image](https://github.com/AmaniOrabi/Angular-Blog-App/assets/70351673/e2129b51-fa36-4bee-91a1-e8bb4c653451)
 
-
+- Demo Video :  https://drive.google.com/file/d/1PIiB2p5tT3GqtSxkbbnsuOvzZAgEhk-P/view?usp=sharing
 <hr/>
 
 ### 💻 Technologies Used:
